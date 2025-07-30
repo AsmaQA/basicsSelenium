@@ -28,14 +28,14 @@ public class ScreenShotAShot {
 	        //Move image file to new destination
 	        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
             String fileWithPath = "./ScreenShot/" + timeStamp + ".png";
-	        File DestFile=new File(fileWithPath);
-	        //Copy file at destination
+	      
 	        try {
-				FileUtils.copyFile(SrcFile, DestFile);
+				FileHandler.copy(SrcFile, new File("./ScreenShot/" + fileWithPath));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+	        
 	        System.out.println("Screenshot saved successfully at: " + fileWithPath);
 	}
 
