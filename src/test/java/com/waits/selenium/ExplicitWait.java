@@ -23,6 +23,10 @@ public class ExplicitWait {
 		String aTitle = "";
 		// launch Chrome and redirect it to the Base URL
 		driver.get("http://demo.guru99.com/test/guru99home/");
+		wait.until(ExpectedConditions.urlContains("guru99home"));
+		
+		WebElement champsEmail = driver.findElement(By.xpath("//*[@placeholder='Enter Emailasma']")) ;
+		wait.until(ExpectedConditions.visibilityOf(champsEmail));
 		// Maximizes the browser window
 		driver.manage().window().maximize();
 		// get the actual value of the title
